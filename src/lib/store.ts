@@ -39,7 +39,7 @@ export const useCart = create<CartState>()(
         })),
       clear: () => set({ items: [] }),
     }),
-    { name: "atlas-cart" },
+    { name: "stitch-makers-cart" },
   ),
 );
 
@@ -59,7 +59,7 @@ export const useWishlist = create<WishState>()(
         })),
       has: (slug) => get().slugs.includes(slug),
     }),
-    { name: "atlas-wish" },
+    { name: "stitch-makers-wish" },
   ),
 );
 
@@ -70,6 +70,6 @@ export const useTheme = create<ThemeState>()(
       theme: "light",
       toggle: () => set((s) => ({ theme: s.theme === "light" ? "dark" : "light" })),
     }),
-    { name: "atlas-theme" },
+    { name: "stitch-makers-theme" },
   ),
 );

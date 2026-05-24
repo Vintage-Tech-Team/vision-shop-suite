@@ -52,12 +52,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Atlas — Premium essentials, made to outlast trends" },
+      { title: "Stitch Makers — Premium essentials, made to outlast trends" },
       { name: "description", content: "Hand-finished sneakers, outerwear and knitwear. Made slowly. Worn forever." },
-      { property: "og:title", content: "Atlas — Premium essentials" },
+      { property: "og:title", content: "Stitch Makers — Premium essentials" },
       { property: "og:description", content: "Hand-finished sneakers, outerwear and knitwear." },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "Atlas" },
+      { property: "og:site_name", content: "Stitch Makers" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [

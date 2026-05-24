@@ -9,7 +9,7 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Atlas — Made slowly. Worn forever." },
+      { title: "Stitch Makers — Made slowly. Worn forever." },
       { name: "description", content: "Premium hand-finished essentials." },
     ],
   }),
@@ -76,10 +76,10 @@ function Index() {
             className="md:col-span-7"
           >
             <div className="relative aspect-[5/6] overflow-hidden">
-              <img src={hero} alt="Atlas signature sneaker" className="h-full w-full object-cover" width={1600} height={1200} />
+              <img src={hero} alt="Stitch Makers signature sneaker" className="h-full w-full object-cover" width={1600} height={1200} />
               <div className="absolute bottom-6 left-6 max-w-xs bg-background/85 p-5 backdrop-blur-md">
                 <p className="text-xs uppercase tracking-widest text-muted-foreground">No. 01</p>
-                <p className="mt-1 font-display text-2xl">The Atlas Low</p>
+                <p className="mt-1 font-display text-2xl">The Stitch Low</p>
                 <p className="mt-1 text-xs text-muted-foreground">Italian leather · Made in Portugal</p>
               </div>
             </div>

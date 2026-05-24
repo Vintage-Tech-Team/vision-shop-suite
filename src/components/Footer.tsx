@@ -1,3 +1,5 @@
+import { Logo } from "@/components/Logo";
+
 export function Footer() {
   return (
     <footer className="mt-32 border-t border-border">
@@ -5,7 +7,7 @@ export function Footer() {
         <div className="marquee flex shrink-0 gap-16 whitespace-nowrap font-display text-6xl md:text-8xl">
           {Array.from({ length: 2 }).map((_, i) => (
             <div key={i} className="flex shrink-0 gap-16">
-              <span>Atlas</span><span className="text-muted-foreground">—</span>
+              <span>Stitch Makers</span><span className="text-muted-foreground">—</span>
               <span>Made slowly</span><span className="text-muted-foreground">—</span>
               <span>Worn forever</span><span className="text-muted-foreground">—</span>
               <span>Est. 2024</span><span className="text-muted-foreground">—</span>
@@ -15,8 +17,8 @@ export function Footer() {
       </div>
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 text-sm md:grid-cols-4">
         <div>
-          <p className="font-display text-2xl">Atlas.</p>
-          <p className="mt-3 text-muted-foreground">Premium essentials, made to outlast trends.</p>
+          <Logo className="h-16 w-16" />
+          <p className="mt-4 text-muted-foreground">Premium essentials, made to outlast trends.</p>
         </div>
         <div>
           <p className="mb-3 text-xs uppercase tracking-widest text-muted-foreground">Shop</p>
@@ -36,7 +38,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-border py-6 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Atlas Studio. All rights reserved.
+        © {new Date().getFullYear()} Stitch Makers. All rights reserved.
       </div>
     </footer>
   );

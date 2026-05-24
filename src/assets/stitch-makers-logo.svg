@@ -1,0 +1,15 @@
+<svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Stitch Makers">
+  <title>Stitch Makers</title>
+  <circle cx="250" cy="250" r="240" fill="#ECEAEA" />
+  <path d="M140 160 C180 100, 220 120, 250 170 C280 120, 320 100, 360 160" stroke="#FF1A1A" stroke-width="8" fill="none" stroke-linecap="round" />
+  <path d="M170 180 C120 230, 120 320, 200 320 C280 320, 280 220, 220 210" stroke="#FF1A1A" stroke-width="8" fill="none" stroke-linecap="round" />
+  <path d="M330 180 C380 230, 380 320, 300 320 C220 320, 220 220, 280 210" stroke="#FF1A1A" stroke-width="8" fill="none" stroke-linecap="round" />
+  <line x1="250" y1="150" x2="250" y2="340" stroke="black" stroke-width="6" />
+  <ellipse cx="250" cy="145" rx="6" ry="12" stroke="black" stroke-width="3" fill="white" />
+  <text x="75" y="420" font-size="52" font-weight="900" font-family="Arial, sans-serif" font-style="italic">
+    <tspan fill="#FF1A1A">S</tspan>
+    <tspan fill="black">TITCH </tspan>
+    <tspan fill="#FF1A1A">M</tspan>
+    <tspan fill="black">AKERS</tspan>
+  </text>
+</svg>

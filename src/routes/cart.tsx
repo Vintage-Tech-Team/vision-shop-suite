@@ -5,7 +5,7 @@ import { getProduct } from "@/lib/products";
 
 export const Route = createFileRoute("/cart")({
   component: Cart,
-  head: () => ({ meta: [{ title: "Bag — Atlas" }] }),
+  head: () => ({ meta: [{ title: "Bag — Stitch Makers" }] }),
 });
 
 function Cart() {

@@ -4,7 +4,7 @@ export const Route = createFileRoute("/journal")({
   component: Journal,
   head: () => ({
     meta: [
-      { title: "Journal — Atlas" },
+      { title: "Journal — Stitch Makers" },
       { name: "description", content: "Notes from the studio: craft, materials, the slow approach." },
     ],
   }),

@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Heart, Moon, ShoppingBag, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Logo } from "@/components/Logo";
 import { useCart, useTheme, useWishlist } from "@/lib/store";
 
 export function Header() {
@@ -17,8 +18,9 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/70 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <Link to="/" className="font-display text-2xl tracking-tight">
-          ATLAS<span className="text-muted-foreground">.</span>
+        <Link to="/" className="flex items-center gap-3 transition-opacity hover:opacity-80">
+          <Logo className="h-11 w-11 shrink-0" />
+          <span className="sr-only">Stitch Makers</span>
         </Link>
         <nav className="hidden items-center gap-8 text-sm md:flex">
           <Link to="/shop" className="transition-opacity hover:opacity-60">Shop</Link>

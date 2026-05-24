@@ -20,8 +20,8 @@ export type Product = {
 
 export const products: Product[] = [
   {
-    slug: "atlas-low",
-    name: "Atlas Low",
+    slug: "stitch-low",
+    name: "Stitch Low",
     tagline: "Hand-finished Italian leather sneaker",
     price: 320,
     category: "Sneakers",
@@ -29,7 +29,7 @@ export const products: Product[] = [
     colors: ["Bone", "Black", "Sand"],
     sizes: ["40", "41", "42", "43", "44", "45"],
     description:
-      "A study in restraint. The Atlas Low pairs full-grain Tuscan leather with a vulcanized rubber sole, built on a last refined over four prototypes.",
+      "A study in restraint. The Stitch Low pairs full-grain Tuscan leather with a vulcanized rubber sole, built on a last refined over four prototypes.",
     details: ["Full-grain Italian leather", "Vulcanized rubber outsole", "Cork insole", "Made in Portugal"],
   },
   {

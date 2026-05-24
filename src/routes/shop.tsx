@@ -12,8 +12,8 @@ export const Route = createFileRoute("/shop")({
   component: Shop,
   head: () => ({
     meta: [
-      { title: "Shop — Atlas" },
-      { name: "description", content: "Browse the full Atlas collection — sneakers, outerwear, knitwear." },
+      { title: "Shop — Stitch Makers" },
+      { name: "description", content: "Browse the full Stitch Makers collection — sneakers, outerwear, knitwear." },
     ],
   }),
 });
