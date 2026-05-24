@@ -7,7 +7,7 @@ import { useCart, useWishlist } from "@/lib/store";
 import { ProductCard } from "@/components/ProductCard";
 
 export const Route = createFileRoute("/product/$slug")({
-  loader: ({ params }) => {
+  loader: ({ params }): import("@/lib/products").Product => {
     const product = getProduct(params.slug);
     if (!product) throw notFound();
     return product;
