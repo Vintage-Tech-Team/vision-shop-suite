@@ -7,22 +7,22 @@ import { useCart, useWishlist } from "@/lib/store";
 import { ProductCard } from "@/components/ProductCard";
 
 export const Route = createFileRoute("/product/$slug")({
-  loader: ({ params }): import("@/lib/products").Product => {
+  loader: ({ params }) => {
     const product = getProduct(params.slug);
     if (!product) throw notFound();
-    return product;
+    return { product };
   },
   head: ({ loaderData }) => ({
     meta: loaderData
       ? [
-          { title: `${loaderData.name} — Atlas` },
-          { name: "description", content: loaderData.tagline },
-          { property: "og:title", content: `${loaderData.name} — Atlas` },
-          { property: "og:description", content: loaderData.tagline },
-          { property: "og:image", content: loaderData.image },
+          { title: `${loaderData.product.name} — Atlas` },
+          { name: "description", content: loaderData.product.tagline },
+          { property: "og:title", content: `${loaderData.product.name} — Atlas` },
+          { property: "og:description", content: loaderData.product.tagline },
+          { property: "og:image", content: loaderData.product.image },
         ]
       : [],
-    links: loaderData ? [{ rel: "canonical", href: `/product/${loaderData.slug}` }] : [],
+    links: loaderData ? [{ rel: "canonical", href: `/product/${loaderData.product.slug}` }] : [],
   }),
   component: ProductPage,
   notFoundComponent: () => (
@@ -33,7 +33,7 @@ export const Route = createFileRoute("/product/$slug")({
 });
 
 function ProductPage() {
-  const product = Route.useLoaderData();
+  const { product } = Route.useLoaderData();
   const [size, setSize] = useState(product.sizes[Math.floor(product.sizes.length / 2)]);
   const [qty, setQty] = useState(1);
   const add = useCart((s) => s.add);
