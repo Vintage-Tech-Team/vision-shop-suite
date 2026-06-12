@@ -23,6 +23,10 @@ dist-ssr
 # Vercel
 .vercel
 
+# Environment
+.env
+backend/.env
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

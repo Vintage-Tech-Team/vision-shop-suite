@@ -34,34 +34,41 @@
   --color-ring: var(--ring);
   --color-paper: var(--paper);
   --color-ink: var(--ink);
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-secondary: var(--brand-secondary);
 }
 
 :root {
   --radius: 0.25rem;
 
-  /* Paper & Ink — warm minimalist editorial */
-  --paper: oklch(0.972 0.008 85);
-  --ink: oklch(0.18 0.005 60);
+  /* Stitch Makers brand */
+  --brand-primary: #E31E24;
+  --brand-secondary: #111111;
+  --brand-bg: #FFFFFF;
+  --brand-text: #333333;
 
-  --background: oklch(0.972 0.008 85);
-  --foreground: oklch(0.18 0.005 60);
-  --card: oklch(0.985 0.006 85);
-  --card-foreground: oklch(0.18 0.005 60);
-  --popover: oklch(0.985 0.006 85);
-  --popover-foreground: oklch(0.18 0.005 60);
-  --primary: oklch(0.18 0.005 60);
-  --primary-foreground: oklch(0.972 0.008 85);
-  --secondary: oklch(0.93 0.01 80);
-  --secondary-foreground: oklch(0.18 0.005 60);
-  --muted: oklch(0.93 0.01 80);
-  --muted-foreground: oklch(0.45 0.008 70);
-  --accent: oklch(0.88 0.015 75);
-  --accent-foreground: oklch(0.18 0.005 60);
-  --destructive: oklch(0.55 0.2 27);
-  --destructive-foreground: oklch(0.985 0.006 85);
-  --border: oklch(0.88 0.01 80);
-  --input: oklch(0.88 0.01 80);
-  --ring: oklch(0.18 0.005 60);
+  --paper: #FFFFFF;
+  --ink: #111111;
+
+  --background: #FFFFFF;
+  --foreground: #111111;
+  --card: #FFFFFF;
+  --card-foreground: #333333;
+  --popover: #FFFFFF;
+  --popover-foreground: #333333;
+  --primary: #E31E24;
+  --primary-foreground: #FFFFFF;
+  --secondary: #111111;
+  --secondary-foreground: #FFFFFF;
+  --muted: #F5F5F5;
+  --muted-foreground: #666666;
+  --accent: #F5F5F5;
+  --accent-foreground: #111111;
+  --destructive: #E31E24;
+  --destructive-foreground: #FFFFFF;
+  --border: #E5E5E5;
+  --input: #E5E5E5;
+  --ring: #E31E24;
 }
 
 .dark {
@@ -116,6 +123,12 @@
   }
   .text-balance {
     text-wrap: balance;
+  }
+  .btn-primary {
+    @apply bg-brand-primary py-3.5 text-sm uppercase tracking-widest text-white transition-transform hover:-translate-y-0.5 disabled:opacity-50;
+  }
+  .field-input {
+    @apply w-full border border-border bg-background p-3 text-sm outline-none focus:border-brand-primary;
   }
   .marquee {
     animation: marquee 40s linear infinite;

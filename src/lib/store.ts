@@ -2,16 +2,21 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 export type CartItem = {
+  productId: string;
   slug: string;
+  name: string;
+  image: string;
+  price: number;
   size: string;
+  color: string;
   qty: number;
 };
 
 type CartState = {
   items: CartItem[];
-  add: (item: CartItem) => void;
-  remove: (slug: string, size: string) => void;
-  setQty: (slug: string, size: string, qty: number) => void;
+  add: (item: Omit<CartItem, "qty"> & { qty?: number }) => void;
+  remove: (productId: string, size: string, color: string) => void;
+  setQty: (productId: string, size: string, color: string, qty: number) => void;
   clear: () => void;
 };
 
@@ -21,20 +26,29 @@ export const useCart = create<CartState>()(
       items: [],
       add: (item) =>
         set((s) => {
-          const i = s.items.findIndex((x) => x.slug === item.slug && x.size === item.size);
+          const qty = item.qty ?? 1;
+          const i = s.items.findIndex(
+            (x) => x.productId === item.productId && x.size === item.size && x.color === item.color,
+          );
           if (i >= 0) {
             const next = [...s.items];
-            next[i] = { ...next[i], qty: next[i].qty + item.qty };
+            next[i] = { ...next[i], qty: next[i].qty + qty };
             return { items: next };
           }
-          return { items: [...s.items, item] };
+          return { items: [...s.items, { ...item, qty }] };
         }),
-      remove: (slug, size) =>
-        set((s) => ({ items: s.items.filter((x) => !(x.slug === slug && x.size === size)) })),
-      setQty: (slug, size, qty) =>
+      remove: (productId, size, color) =>
+        set((s) => ({
+          items: s.items.filter(
+            (x) => !(x.productId === productId && x.size === size && x.color === color),
+          ),
+        })),
+      setQty: (productId, size, color, qty) =>
         set((s) => ({
           items: s.items.map((x) =>
-            x.slug === slug && x.size === size ? { ...x, qty: Math.max(1, qty) } : x,
+            x.productId === productId && x.size === size && x.color === color
+              ? { ...x, qty: Math.max(1, qty) }
+              : x,
           ),
         })),
       clear: () => set({ items: [] }),
